@@ -2,6 +2,16 @@
 const express = require('express');
 const app = express();
 
+// Root Level
+
+app.get('/', (req, res) => {
+	res.json({
+		Greetings: 'Hello my friend',
+		instructions: 'You can go to /api/timestamp/date to watch the timestamp',
+		example: 'Try with: /api/timestamp/2020-12-06',
+	});
+});
+
 //First Timestamp Endpoint
 app.get('/api/timestamp', (req, res) => {
 	res.json({
